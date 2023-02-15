@@ -14,6 +14,10 @@
 - [**Database**](#database)
 - [**Feature**](#feature)
   - [**1. Login**](#1-login)
+  - [**2. Sign Up**](#2-sign-up)
+  - [**3. Recovery Password**](#3-recovery-password)
+  - [**4. Dashboard**](#4-dashboard)
+- [**5. Thứ tự lượt khám**](#5-thứ-tự-lượt-khám)
 - [Made with 💘 and PHP ](#made-with--and-php-)
 
 # [**Introduction**](#introduction)
@@ -135,6 +139,130 @@ Giờ thì mình sẽ giới thiệu cho các bạn toàn bộ chức năng chí
 
 ## [**1. Login**](#1-login)
 
+<p align="center">
+    <img src="./photo/photo_01.png" />
+</p>
+<h3 align="center">
 
+***Chức năng đơn giản nhưng quan trọng với mọi website***
+</h3>
+
+Đăng nhập là chức năng mà mọi lập trình viên đều phải biết làm dù là phục vụ cho website hoặc ứng dụng 
+di động. Có lẽ không phải nói nhiều nữa🥱. Mình sẽ tiếp tục.
+
+## [**2. Sign Up**](#2-sign-up)
+
+Có đăng nhập thì dĩ nhiên là phải có đăng ký rồi. Tính năng này thì chẳng có gì lạ lẫm với các bạn cả. Ngoài các thông tin người dùng nhập vào và sau khi kiểm tra hợp lệ
+thì họ sẽ được nhận một email thông báo gửi tới email mà được sử dụng để tài khoản như sau:
+
+<p align="center">
+    <img src="./photo/image1.png" />
+</p>
+<h3 align="center">
+
+**Chúc mừng bạn đã trở thành thành viên của tập đoàn Umbrella Corporation 🎇**
+</h3>
+
+## [**3. Recovery Password**](#3-recovery-password)
+
+Bạn bị bệnh não cá vàng 🐠🐠? Bạn hay làm trước quên sau ? Lần này thì quên cmn luôn mật khẩu mình vừa mới tạo. 
+Đừng lo ! Website này hỗ trợ luôn trường hợp bạn quên mật khẩu. Chỉ cần nhập đúng email bạn đã đăng kí tài khoản tại **UMBRELLA CORPORATION** 
+
+Giao diện sẽ yêu cầu chúng ta nhập một số thông tin cơ bản như sau:
+
+<p align="center">
+    <img src="./photo/photo_02.png" />
+</p>
+<h3 align="center">
+
+**Nhấn nút nhận mã xác thực để lấy mã với email mà bạn đã nhập ở bên trên😎😍**
+</h3>
+
+Sau khi hệ thống làm việc thì sẽ gửi về thông báo như hình:
+
+<p align="center">
+    <img src="./photo/photo_03.png" />
+</p>
+<h3 align="center">
+
+**Kiểm tra Gmail thôi nào 🤗🤩**
+</h3>
+
+BÙM 🔥🔥🔥 Ngạc nhiên chưa !! Nhập cái mã bên dưới và tạo lại mật khẩu nào 
+
+<p align="center">
+    <img src="./photo/photo_04.png" />
+</p>
+<h3 align="center">
+
+**Lần sau đừng quên mật khẩu nữa nha 😅😅**
+</h3>
+
+## [**4. Dashboard**](#4-dashboard)
+
+Màn hình này được sử dụng để liệt kê các thông tin cơ bản của website như hình minh họa dưới đây:
+
+<p align="center">
+    <img src="./photo/photo_05.png" />
+</p>
+<h3 align="center">
+
+**Dashboard cho phép các bác sĩ xem được những thông tin cơ bản về bệnh nhân**
+</h3>
+
+Chúng ta có thể xem được những thông tin như:
+
+- Số lượng bác sĩ đang làm việc 
+
+- Số lượng bệnh nhân khám ngày hôm nay 
+
+- Số lượng bệnh nhân đặt lịch khám qua ứng dụng từ trước( vẫn cho đặt trước thời gian khám nhưng chỉ nhận 
+số thự khám khi đến bệnh viện)
+
+- Số lượt khám bị hủy
+
+- Số lượng bệnh nhân trong 7 ngày 
+
+- .....
+
+Đại khái là phần này là những thông tin thuộc dạng vô thưởng vô phạt. Về bản chất, đề tài của Phong là 
+hỗ trợ bệnh nhân đặt lượt khám và bác sĩ thì nắm được thứ tự bệnh nhân mà mình sẽ khám. Nghĩa là đề tài 
+không hề có yếu tố `quản lý` trong đề tài. 
+
+Vậy nên dashboard là chức năng không bắt buộc phải làm trong 
+đề tài này🙋‍♂️🙋‍♂️
+
+# [**5. Thứ tự lượt khám**](#5-thứ-tự-lượt-khám)
+
+Chức năng này là chức năng cho phép `bác sĩ` hoặc `hỗ trợ viên` xem và chỉnh sửa thứ tự khám bệnh
+của các bệnh nhân.
+
+Đây là chức năng tốn khá nhiều thời gian của Phong khi làm nhưng không khó nha😋😋 Chỉ là 
+code nhiều thôi chứ tư duy thì không nhiều lắm. Tuy chỉ có một màn hình nhưng 
+màn hình này cung cấp đủ các chức năng cơ bản: thêm - sửa - xóa 
+
+Ngoài ra thì tốn thời gian nhất với mình là phần phân trang (paging) do mình code JavaScript thuần từ 
+đầu tới cuối nên đây là chức năng tốn thời gian khá lâu.
+
+Còn những chức năng khác thì jQuery vẫn là chân ái😎😎
+
+<p align="center">
+    <img src="./photo/photo_06.png" />
+</p>
+<h3 align="center">
+
+**Thêm - xóa - sửa lượt khám của các bệnh nhân 👨‍⚕️👩‍⚕️**
+</h3>
+
+Các bác sĩ thì có thể bắt đầu khám bệnh bằng cách viết `bệnh án` và `phác đồ điều trị, đơn thuốc`. Khi khám 
+xong cho bệnh nhân thì ấn nút **Xong**. Còn nếu bệnh nhân vắng mặt thì chọn **Hủy** hoặc **Xóa**.
+
+<p align="center">
+    <img src="./photo/photo_07.png" />
+</p>
+<h3 align="center">
+
+**Trạng thái tương ứng khi một lượt bệnh nhân được khám xong 👨‍⚕️👩‍⚕️**
+</h3>
 
 # [Made with 💘 and PHP <img src="https://www.vectorlogo.zone/logos/php/php-horizontal.svg" width="60">](#made-with-love-and-php)
