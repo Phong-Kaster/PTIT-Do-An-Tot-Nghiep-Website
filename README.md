@@ -17,7 +17,14 @@
   - [**2. Sign Up**](#2-sign-up)
   - [**3. Recovery Password**](#3-recovery-password)
   - [**4. Dashboard**](#4-dashboard)
-- [**5. Thứ tự lượt khám**](#5-thứ-tự-lượt-khám)
+  - [**5. Thứ tự lượt khám**](#5-thứ-tự-lượt-khám)
+  - [**6. Sắp xếp lượt khám**](#6-sắp-xếp-lượt-khám)
+  - [**7. Tạo thứ tự lượt khám \& Cơ chế**](#7-tạo-thứ-tự-lượt-khám--cơ-chế)
+  - [**8. Lịch hẹn**](#8-lịch-hẹn)
+  - [**9. Các chức năng Quản lý khác**](#9-các-chức-năng-quản-lý-khác)
+  - [**10. Thông tin cá nhân**](#10-thông-tin-cá-nhân)
+  - [**11. Thay đổi mật khẩu**](#11-thay-đổi-mật-khẩu)
+- [**Post Script**](#post-script)
 - [Made with 💘 and PHP ](#made-with--and-php-)
 
 # [**Introduction**](#introduction)
@@ -44,6 +51,11 @@ nếu đem so sánh với các website khác như website bán hàng, website đ
  
 Nếu bạn chưa đọc các repo còn lại thì trước khi bay vào xem website này có chức năng gì ?? Chúng mình 
 hãy cùng nhau tìm hiểu sơ lược đề tài mà Phong đang giải quyết nha 😋😋😋😋
+
+
+À quên nữa, nhìn website thì có vẻ như là nhiều chức năng ấy. Tại đây là đồ án tốt nghiệp đại học rồi mà🤣🤣. Nhưng nếu các bạn 
+là người thiếu kiên nhẫn & muốn tìm kiếm cái tinh hoa nhất ở dự này thì có thể bay ✈ ⛷
+ thẳng vào chức năng [**Tạo thứ tự lượt khám & Cơ chế**](#7-cơ-chế-tạo-thứ-tự-lượt-khám) để coi mình làm như nào ha.
 
 # [**Topic**](#topic)
 
@@ -232,7 +244,7 @@ không hề có yếu tố `quản lý` trong đề tài.
 Vậy nên dashboard là chức năng không bắt buộc phải làm trong 
 đề tài này🙋‍♂️🙋‍♂️
 
-# [**5. Thứ tự lượt khám**](#5-thứ-tự-lượt-khám)
+## [**5. Thứ tự lượt khám**](#5-thứ-tự-lượt-khám)
 
 Chức năng này là chức năng cho phép `bác sĩ` hoặc `hỗ trợ viên` xem và chỉnh sửa thứ tự khám bệnh
 của các bệnh nhân.
@@ -264,5 +276,204 @@ xong cho bệnh nhân thì ấn nút **Xong**. Còn nếu bệnh nhân vắng m�
 
 **Trạng thái tương ứng khi một lượt bệnh nhân được khám xong 👨‍⚕️👩‍⚕️**
 </h3>
+
+## [**6. Sắp xếp lượt khám**](#6-sắp-xếp-lượt-khám)
+
+Chức năng này thay đổi thứ tự khám của bệnh nhân. Để thay đổi thì ta chỉ cần giữ chuột vào ở 
+tên bệnh nhân mong muốn & kéo thả đến vị trí mới. 
+
+> Lưu ý: Hai bệnh nhân ở đầu hàng chờ thì sẽ không thể đổi thứ tự khám nữa & được tô màu xanh lá 💚 
+để nhận biết
+
+<p align="center">
+    <img src="./photo/photo_08.png" />
+</p>
+<h3 align="center">
+
+**Kéo & thả để thay đổi thứ tự khám của bệnh nhân🥶🥵😨**
+</h3>
+
+## [**7. Tạo thứ tự lượt khám & Cơ chế**](#7-cơ-chế-tạo-thứ-tự-lượt-khám)
+
+Như tiêu đề thì khi đến chúng ta đến bệnh viện thì nếu muốn khám bệnh thì `hỗ trợ viên` sẽ 
+phải tạo lượt khám cho bệnh nhân mới. Điều này có thể dẫn tới 2 trường hợp:
+
+- **Trường hợp 1**: Bệnh nhân mô tả bệnh lý của mình & chỉ muốn được khám bệnh. Họ không quan 
+tâm tới bác sĩ nào sẽ khám cho mình. 
+
+- **Trường hợp 2**: Bệnh nhân mô tả bệnh lý & có mong muốn chỉ định bác sĩ sẽ khám cho mình. 
+
+Đối với **Trường hợp 1** thì thao tác sẽ đơn giản hơn. `Hỗ trợ viên` chỉ cần chọn mô tả bệnh lý phù 
+hợp và bệnh nhân sẽ được hệ thống tự động chỉ định tới một trong các bác sĩ có chuyên khoa 
+tương ứng.
+
+<p align="center">
+    <img src="./photo/photo_09.png" />
+</p>
+<h3 align="center">
+
+**Hệ thống tự động chỉ định bác sĩ nếu bệnh nhân không có nhu cầu🥶🥵😨**
+</h3>
+
+Cơ chế phân công bác sĩ có thể phát biểu như sau: 
+
+- **Bước 1**: Hệ thống tìm tất cả các `bác sĩ` có cùng chuyên khoa dựa trên `nhu cầu khám bệnh`.
+
+- **Bước 2**: Hệ thống tính toán số lượng bệnh nhân đang chờ được khám của từng bác sĩ hiện tại.
+
+- **Bước 3**: Hệ thống so sánh & chọn ra bác sĩ có số lượng bệnh nhân đang chờ khám là thấp nhất 
+
+& chỉ định khám cho bệnh nhân này
+
+> Trường hợp các bác sĩ có số lượng bệnh nhân bằng nhau thì sắp xếp theo ID của bác sĩ & lấy ra người đầu tiên để khám cho bệnh nhân mới 
+
+> Hỏi: Vậy sẽ thế nào nếu như không phải mọi bác sĩ đều có mặt vào ngày hôm nay?
+>
+> Đáp: Đề tài của Phong thì Phong không chuyên làm website để làm tới chức năng này😊😊 & giáo viên hướng dẫn cũng không 
+yêu cầu & cuối cùng là thời gian 3 tháng là không đủ để làm website nhiều chức năng tới vậy. Tuy nhiên, nếu muốn giải bài toán này thì chúng ta sẽ làm thêm chức năng để biết ai đang online và ai đang offline
+> (kiểu giống như Facebook ấy). Tiếp đó, ta lấy những bác sĩ đang online(tức đang đi làm) để tính toán và phân công bệnh nhân
+
+Nếu chia vào trường hợp này thì các bệnh nhân sẽ được chia đều về các bác sĩ như mô tả kể trên:
+
+<p align="center">
+    <img src="./photo/photo_09_2.png" />
+</p>
+
+<p align="center">
+    <img src="./photo/photo_09_3.png" />
+</p>
+<h3 align="center">
+
+**Cùng nguyên nhân khám thì sẽ được chia đều tới các phòng khám**
+</h3>
+
+Đối với **Trường hợp 2** thì chúng ta sẽ nhắc cho bệnh nhân một thông báo như sau:
+
+<p align="center">
+    <img src="./photo/photo_09_1.png" />
+</p>
+<h3 align="center">
+
+**Bạn có sẵn sàng chờ để được đúng bác sĩ mong muốn khám cho mình?**
+</h3>
+
+Nếu **Tiếp tục** thì bệnh nhân vẫn được đáp ứng như ý muốn(Nhưng mà có thể phải chờ dài cả cổ ra 😭😭)
+
+Nếu **Để hệ thống lựa chọn** thì quay lại **Trường hợp 1**.
+
+## [**8. Lịch hẹn**](#8-lịch-hẹn)
+
+Như mình đã giới thiệu ở trên nhưng nếu quên thì mình xin nhắc lại là `chức năng này không tạo lịch 
+hẹn để ai bỏ tiền để đến giờ nào khám thì khám mà tuân theo nguyên tắc ai đến trước thì khám trước`. 
+Vì đây là yêu cầu từ thầy Hào - giáo viên hướng dẫn của mình nên chắc chắn là phải tuân theo roy 😋😋.
+
+Việc tạo lịch hẹn ở đây để nhằm mục đích tiết kiệm thời gian đăng kí lúc đến khám bệnh. Chúng ta vẫn 
+có thể đưa ra giờ mong muốn nhưng tùy thuộc vào số lượng bệnh nhân hiện tại thì `hỗ trợ viên` có thể thay đổi 
+thứ tự khám cho chúng ta hoặc không. 
+
+<p align="center">
+    <img src="./photo/photo_10.png" />
+</p>
+<h3 align="center">
+
+**Lịch hẹn là một chức năng chỉ giúp ta tiết kiệm thời gian đăng kí khám bệnh⌚⌛**
+</h3>
+
+## [**9. Các chức năng Quản lý khác**](#9-các-chức-năng-quản-lý-khác)
+
+Phần này thì Phong chỉ giới thiệu sơ ra về các chức năng Quản lý. Vì các chức năng này khá là căn bản, chỉ 
+đơn thuần là `thêm - sửa - xóa`. Các chức năng này không quá nổi bật nhưng phải có trong đồ án để website đặt tới sự hoàn hảo & nhất quán nhất.
+
+<p align="center">
+    <img src="./photo/photo_11.png" />
+</p>
+<h3 align="center">
+
+**Chuyên khoa - nơi ta quản lý thông tin chuyên khoa mà các bác sĩ đang làm việc👰**
+</h3>
+
+<p align="center">
+    <img src="./photo/photo_12.png" />
+</p>
+<h3 align="center">
+
+**Bác sĩ - nơi ta quản lý thông tin cá nhân của các bác sĩ đang làm việc👨‍⚕️👩‍⚕️**
+</h3>
+
+<p align="center">
+    <img src="./photo/photo_13.png" />
+</p>
+<h3 align="center">
+
+**Bệnh nhân - nơi ta quản lý thông tin cá nhân của bệnh nhân🤕😷**
+</h3>
+
+Đầy đủ các chức năng nhập xuất thông tin cơ bản nha. Bác sĩ và bệnh nhân thì đều là con người nên 
+thông tin cũng gần tương tự nhau
+
+<p align="center">
+    <img src="./photo/photo_14.png" />
+</p>
+<h3 align="center">
+
+**Thông tin cá nhân của bác sĩ & bệnh nhân thì tương tự nhau🙋‍♂️🙋‍♀️**
+</h3>
+
+Tiếp theo, chúng ta có thông tin phòng khám - nơi các bác sĩ làm việc. Điều này, giúp bệnh nhân có 
+thể dễ dàng đúng phòng bệnh mong muốn.
+
+<p align="center">
+    <img src="./photo/photo_15.png" />
+</p>
+<h3 align="center">
+
+**Bác sĩ cần tìm đang làm việc tại phòng nào?🏢🏦**
+</h3>
+
+Cuối cùng, chúng ta có dịch vụ. Thực chất là phần nguyên nhân khám bệnh
+ ở phần [**Tạo thứ tự lượt khám**](#7-cơ-chế-tạo-thứ-tự-lượt-khám)
+
+ <p align="center">
+    <img src="./photo/photo_16.png" />
+</p>
+<h3 align="center">
+
+**Mục này quản lý những nguyên nhân khám bệnh phổ biến**
+</h3>
+
+## [**10. Thông tin cá nhân**](#10-thông-tin-cá-nhân)
+
+Phần này thể hiện thông tin cá nhân của bạn - người đang trực tiếp sử dụng phần mềm này. 
+
+<p align="center">
+    <img src="./photo/photo_17.png" />
+</p>
+<p align="center">
+    <img src="./photo/photo_18.png" />
+</p>
+<h3 align="center">
+
+**Thông tin cá nhân👩‍💻👩‍💻👨‍💻👨‍💻**
+</h3>
+
+Chúng ta có thể xem và thay đổi thông tin cá nhân & hình đại diện nếu muốn. Tuy nhiên, trong thực tế, 
+Phong cho rằng bác sĩ không thể tự ý đổi thông tin cá nhân được đâu mà sẽ do một quản trị viên(admin) 
+thay đổi các thông tin cá nhân.
+
+## [**11. Thay đổi mật khẩu**](#11-thay-đổi-mật-khẩu)
+
+<p align="center">
+    <img src="./photo/photo_19.png" />
+</p>
+<h3 align="center">
+
+**Thay đổi mật khẩu bất cứ lúc nào🤹‍♂️🤹‍♀️**
+</h3>
+
+# [**Post Script**](#)
+
+- **03-03-2023**: Chà đã 1 tháng trôi qua rồi mà vẫn chưa tìm được việc làm. Thực sự thấy buồn quá 🤔.
+Uả ? Sao trò đời khó đoán quá. Tui có kiến thức, kinh nghiệm thực tế & thái độ nghiêm túc làm việc mà. 
+Sao không ai cho tui cơ hội để tỏa sáng nhỉ? Mong sớm tìm được một điểm tựa để tui có thể "bẩy" cả trái đất lên🌎🌍🌏
 
 # [Made with 💘 and PHP <img src="https://www.vectorlogo.zone/logos/php/php-horizontal.svg" width="60">](#made-with-love-and-php)
